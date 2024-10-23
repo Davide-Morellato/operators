@@ -28,7 +28,7 @@ public class App {
 
 
 
-        
+
         /*
          * OPERTATORI LOGICI -> risultato atteso True || False (boolean)
          * 
@@ -54,5 +54,144 @@ public class App {
                 //  !   false       true  -> !(true)  [NOT(true)]
         boolean c = ! ((3 > 5) || (8 % 2 == 0));
         System.out.println("Condizione NOT: " + c); //false
+
+
+
+        /*
+         * CONDIZIONI CON if
+         * 
+         * if
+         * else
+         * else if
+         * if annidati
+         * operatore ternario
+         * 
+         */
+
+         //salvo in una variabile la condizione di partenza
+         boolean isOnLine = true;
+
+         //SE isOnLine è vera
+            //ALLORA stampa il messaggio
+         if(isOnLine){
+            System.out.println("è online"); //NON viene stampato nulla, perchè la condizione iniziale della variabile è FALSE
+         }
+
+         //SE isOnLine NON è vera
+            //ALLORA stampa il messaggio
+         if(!isOnLine){
+            System.out.println("non è online"); //VERRA' stampato il messaggio, perché la condizione iniziale false è negata dall'operatore NOT
+         }
+
+         //SE isOnLine è vera
+            //ALLORA stampa: è online
+         //ALTRIMENTI stampa: non è online
+         if(isOnLine){
+            System.out.println("è online"); 
+         } else {
+            System.out.println("non è online");
+         }
+        
+
+        //definisco il valore per il controllo
+        String name = "Marco";
+
+        /* CONTROLLO CON IF-ELSE */
+        if(name == "Luca"){
+            System.out.println("Luca è online");
+        } else {
+            System.out.println("Luca è offline, ma " + name + " è online");
+        }
+
+        /* CONTROLLO CON IF-ELSE IF-ELSE */
+        if(name == "Luca"){
+            System.out.println("Luca è online");
+
+        } else if(name == "Gianni") {
+            System.out.println("Gianni è online");
+
+        }else{
+            System.out.println(name + " è online");
+        }
+
+
+        //definisco il valore per il controllo (if annidati)
+        int num = 5;
+
+        /* CONTROLLO CON IF ANNIDATI */
+        if(num < 10){
+            System.out.println(num + " è minore di 10");
+
+            if(num % 2 == 0){
+                System.out.println(num + " è pari");
+
+            } else{
+                System.out.println(num + " è dispari");
+            }
+
+        } else {
+            System.out.println(num + " non è minore di 10");
+        }
+
+
+        /* OPERATORE TERNARIO */
+        //definisco il tipo di dato atteso (String)
+        //pongo la condizione da controllare (2 > 5)
+        //definsico gli esiti
+        // SE 2 > 5
+            // ALLORA (?) "ciao"
+        // ALTRIMENTI (:) "buongiorno"
+        String greet = 2 > 5 ? "ciao" : "buongiorno";
+        System.out.println(greet);
+
+        boolean compare = 2 < 4 ? true : false;
+        System.out.println("La condizione è: " + compare);
+
+
+
+        /* SWITCH - CASE - BREAK - DEFAULT */
+
+        /* 
+        switch(condizione){
+            (case) in caso fosse così:
+            esegui questo;
+            (break) interrompi;
+
+            (case) in caso sia così:
+            esegui quest'altro;
+            (break) interrompi;
+             -- se non è nessuna delle precedenti --
+            default:
+            esegui questo
+        }
+        */
+
+        boolean isOdd = 5 % 2 == 0;
+
+        switch(isOdd){
+            case true:
+                System.out.println("è pari");
+            break;
+
+            case false:
+                System.out.println(isOdd + ", è dispari");
+            break;
+        }
+
+        String surname = "Pasticcio";
+
+        switch(surname){
+            case "Mastronardi":
+                System.out.println("Salve Mastronardi");
+            break;
+
+            case "Zingarolli":
+                System.out.println("Salve Zingarolli");
+            break;
+
+            default: //nel caso in cui i controlli precedenti non dovessero andare a buon fine, allora stampa...
+                System.out.println("default: Salve " + surname);
+        }
+
     }
 }
